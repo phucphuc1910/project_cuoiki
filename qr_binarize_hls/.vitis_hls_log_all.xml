@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="qr_binarize_hls" solutionName="solution1" date="2026-06-17T23:21:52.881+0700" type="Warning"/>
+      </synLog>
+      <simLog>
+        <logs message="WARNING: [VRFC 10-3645] port 'axis_block_info' remains unconnected for this instance [/home/phuc/HWSWCK/qr_binarize_hls/solution1/sim/verilog/AESL_deadlock_kernel_monitor_top.v:20]&#xA;Completed static elaboration&#xA;Starting simulation data flow analysis&#xA;Completed simulation data flow analysis&#xA;Time Resolution for simulation is 1ps&#xA;Compiling package xil_defaultlib.$unit_dataflow_monitor_sv&#xA;Compiling module xil_defaultlib.qr_binarize_mul_8ns_9ns_16_1_1(N...&#xA;Compiling module xil_defaultlib.qr_binarize_mac_muladd_8ns_7ns_1...&#xA;Compiling module xil_defaultlib.qr_binarize_mac_muladd_8ns_5ns_1...&#xA;Compiling module xil_defaultlib.qr_binarize_flow_control_loop_pi...&#xA;Compiling module xil_defaultlib.qr_binarize_qr_binarize_Pipeline...&#xA;Compiling module xil_defaultlib.qr_binarize_CTRL_s_axi&#xA;Compiling module xil_defaultlib.qr_binarize_regslice_both&#xA;Compiling module xil_defaultlib.qr_binarize_regslice_both(DataWi...&#xA;Compiling module xil_defaultlib.qr_binarize&#xA;Compiling module xil_defaultlib.fifo(DEPTH=64,WIDTH=32)&#xA;Compiling module xil_defaultlib.fifo(DEPTH=64,WIDTH=4)&#xA;Compiling module xil_defaultlib.fifo(DEPTH=64,WIDTH=1)&#xA;Compiling module xil_defaultlib.AESL_axi_s_src&#xA;Compiling module xil_defaultlib.fifo(DEPTH=64)&#xA;Compiling module xil_defaultlib.AESL_axi_s_dst&#xA;Compiling module xil_defaultlib.AESL_axi_slave_CTRL&#xA;Compiling module xil_defaultlib.AESL_deadlock_idx1_monitor&#xA;Compiling module xil_defaultlib.AESL_deadlock_idx0_monitor&#xA;Compiling module xil_defaultlib.AESL_deadlock_kernel_monitor_top...&#xA;Compiling module xil_defaultlib.nodf_module_intf&#xA;Compiling module xil_defaultlib.upc_loop_intf(FSM_WIDTH=1)&#xA;Compiling module xil_defaultlib.dataflow_monitor_1&#xA;Compiling module xil_defaultlib.apatb_qr_binarize_top&#xA;Compiling module work.glbl&#xA;Built simulation snapshot qr_binarize&#xA;&#xA;&#xA;****** xsim v2022.2 (64-bit)&#xA;  **** SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022&#xA;  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022&#xA;    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.&#xA;&#xA;&#xA;source xsim.dir/qr_binarize/xsim_script.tcl&#xA;# xsim {qr_binarize} -autoloadwcfg -tclbatch {qr_binarize.tcl}&#xA;Time resolution is 1 ps&#xA;source qr_binarize.tcl&#xA;## run all&#xA;////////////////////////////////////////////////////////////////////////////////////&#xA;// Inter-Transaction Progress: Completed Transaction / Total Transaction&#xA;// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%&#xA;//&#xA;// RTL Simulation : &quot;Inter-Transaction Progress&quot; [&quot;Intra-Transaction Progress&quot;] @ &quot;Simulation Time&quot;&#xA;////////////////////////////////////////////////////////////////////////////////////&#xA;// RTL Simulation : 0 / 1 [0.00%] @ &quot;125000&quot;&#xA;// RTL Simulation : 1 / 1 [100.00%] @ &quot;1295000&quot;&#xA;////////////////////////////////////////////////////////////////////////////////////&#xA;$finish called at time : 1355 ns : File &quot;/home/phuc/HWSWCK/qr_binarize_hls/solution1/sim/verilog/qr_binarize.autotb.v&quot; Line 415&#xA;## quit" projectName="qr_binarize_hls" solutionName="solution1" date="2026-06-18T00:09:38.927+0700" type="Warning"/>
+        <logs message="WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the &quot;-mt off -v 1&quot; switches to see more information from the C compiler. The following environment variables have been detected:&#xA;    LIBRARY_PATH" projectName="qr_binarize_hls" solutionName="solution1" date="2026-06-18T00:09:31.908+0700" type="Warning"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="ck_qr" location="/home/phuc/HWSWCK/Z710/ck_qr/ck_qr" platform="/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/qr_ck.xpfm" platformUID="xilinx:zybo::0.0(custom)" systemProject="ck_qr_system" sysConfig="qr_ck" runtime="C/C++" cpu="standalone_domain" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="9464fb0dfa080345e198e3c78b2ff5c3">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.120051995">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1961955107" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="lwip_echo_server" hasBspSettings="true"/>
+</sdkproject:SdkProject>

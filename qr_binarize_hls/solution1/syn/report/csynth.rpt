@@ -1,0 +1,136 @@
+
+
+================================================================
+== Synthesis Summary Report of 'qr_binarize'
+================================================================
++ General Information: 
+    * Date:           Wed Jun 17 23:21:52 2026
+    * Version:        2022.2 (Build 3670227 on Oct 13 2022)
+    * Project:        qr_binarize_hls
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z010-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+--------+-----------+----------+-----+
+    |                 Modules                 | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |      |        |           |          |     |
+    |                 & Loops                 | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined| BRAM |   DSP  |     FF    |    LUT   | URAM|
+    +-----------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+--------+-----------+----------+-----+
+    |+ qr_binarize                            |     -|  0.69|    90008|  9.001e+05|         -|    90009|      -|        no|     -|  2 (2%)|  304 (~0%)|  433 (2%)|    -|
+    | + qr_binarize_Pipeline_VITIS_LOOP_21_1  |     -|  0.85|    90005|  9.000e+05|         -|    90005|      -|        no|     -|  2 (2%)|  130 (~0%)|  235 (1%)|    -|
+    |  o VITIS_LOOP_21_1                      |     -|  7.30|    90003|  9.000e+05|         5|        1|  90000|       yes|     -|       -|          -|         -|    -|
+    +-----------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+------+--------+-----------+----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* S_AXILITE Interfaces
++------------+------------+---------------+--------+----------+
+| Interface  | Data Width | Address Width | Offset | Register |
++------------+------------+---------------+--------+----------+
+| s_axi_CTRL | 32         | 6             | 16     | 0        |
++------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register  | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL      | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER      | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER    | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR    | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | threshold | 0x10   | 32    | W      | Data signal of threshold         |                                                                      |
+| s_axi_CTRL | invert    | 0x18   | 32    | W      | Data signal of invert            |                                                                      |
+| s_axi_CTRL | size      | 0x20   | 32    | W      | Data signal of size              |                                                                      |
++------------+-----------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* AXIS
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| Interface | Register Mode | TDATA | TKEEP | TLAST | TREADY | TSTRB | TVALID |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+| dst       | both          | 8     | 1     | 1     | 1      | 1     | 1      |
+| src       | both          | 32    | 4     | 1     | 1      | 4     | 1      |
++-----------+---------------+-------+-------+-------+--------+-------+--------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++-----------+-----------+---------------------------------------------+
+| Argument  | Direction | Datatype                                    |
++-----------+-----------+---------------------------------------------+
+| src       | in        | stream<hls::axis<ap_uint<32>, 0, 0, 0>, 0>& |
+| dst       | out       | stream<hls::axis<ap_uint<8>, 0, 0, 0>, 0>&  |
+| threshold | in        | ap_uint<8>                                  |
+| invert    | in        | ap_uint<1>                                  |
+| size      | in        | ap_uint<32>                                 |
++-----------+-----------+---------------------------------------------+
+
+* SW-to-HW Mapping
++-----------+--------------+-----------+-------------------------------------+
+| Argument  | HW Interface | HW Type   | HW Info                             |
++-----------+--------------+-----------+-------------------------------------+
+| src       | src          | interface |                                     |
+| dst       | dst          | interface |                                     |
+| threshold | s_axi_CTRL   | register  | name=threshold offset=0x10 range=32 |
+| invert    | s_axi_CTRL   | register  | name=invert offset=0x18 range=32    |
+| size      | s_axi_CTRL   | register  | name=size offset=0x20 range=32      |
++-----------+--------------+-----------+-------------------------------------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++-----------------------------------------+-----+--------+----------+-----+--------+---------+
+| Name                                    | DSP | Pragma | Variable | Op  | Impl   | Latency |
++-----------------------------------------+-----+--------+----------+-----+--------+---------+
+| + qr_binarize                           | 2   |        |          |     |        |         |
+|   sub_i_i_fu_119_p2                     | -   |        | sub_i_i  | add | fabric | 0       |
+|  + qr_binarize_Pipeline_VITIS_LOOP_21_1 | 2   |        |          |     |        |         |
+|    i_V_2_fu_164_p2                      | -   |        | i_V_2    | add | fabric | 0       |
+|    mac_muladd_8ns_7ns_16ns_16_4_1_U2    | 1   |        | ret_V_6  | mul | dsp48  | 3       |
+|    mul_8ns_9ns_16_1_1_U1                | -   |        | ret_V_7  | mul | auto   | 0       |
+|    mac_muladd_8ns_7ns_16ns_16_4_1_U2    | 1   |        | ret_V    | add | dsp48  | 3       |
+|    mac_muladd_8ns_5ns_16ns_16_4_1_U3    | 1   |        | ret_V_3  | mul | dsp48  | 3       |
+|    mac_muladd_8ns_5ns_16ns_16_4_1_U3    | 1   |        | ret_V_4  | add | dsp48  | 3       |
++-----------------------------------------+-----+--------+----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++----------------+-------------------------------------------+----------------------------------------------+
+| Type           | Options                                   | Location                                     |
++----------------+-------------------------------------------+----------------------------------------------+
+| interface      | mode=axis port=src                        | qr_binarize.cpp:14 in qr_binarize, src       |
+| interface      | mode=axis port=dst                        | qr_binarize.cpp:15 in qr_binarize, dst       |
+| interface      | mode=s_axilite port=threshold bundle=CTRL | qr_binarize.cpp:16 in qr_binarize, threshold |
+| interface      | mode=s_axilite port=invert bundle=CTRL    | qr_binarize.cpp:17 in qr_binarize, invert    |
+| interface      | mode=s_axilite port=size bundle=CTRL      | qr_binarize.cpp:18 in qr_binarize, size      |
+| interface      | mode=s_axilite port=return bundle=CTRL    | qr_binarize.cpp:19 in qr_binarize, return    |
+| pipeline       | II=1                                      | qr_binarize.cpp:22 in qr_binarize            |
+| loop_tripcount | min=90000 max=90000                       | qr_binarize.cpp:23 in qr_binarize            |
++----------------+-------------------------------------------+----------------------------------------------+
+
+

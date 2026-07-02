@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="qr_binarize.cpp" path="/home/phuc/HWSWCK/qr_binarize.cpp"/>
+    <originFiles name="qr_binarize.h" path="/home/phuc/HWSWCK/qr_binarize.h"/>
+  </source>
+  <testbench>
+    <originFiles name="tb_qr_binarize.cpp" path="/home/phuc/HWSWCK/tb_qr_binarize.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

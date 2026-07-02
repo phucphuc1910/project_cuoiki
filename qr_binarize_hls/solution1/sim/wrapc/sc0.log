@@ -1,0 +1,7 @@
+   Build using "/home/phuc/tools/Xilinx/Vitis_HLS/2022.2/tps/lnx64/gcc-8.3.0/bin/g++"
+   Compiling apatb_qr_binarize.cpp
+   Compiling apatb_qr_binarize_util.cpp
+   Compiling qr_binarize.cpp_pre.cpp.tb.cpp
+   Compiling tb_qr_binarize.cpp_pre.cpp.tb.cpp
+   Compiling apatb_qr_binarize_ir.ll
+   Generating cosim.tv.exe

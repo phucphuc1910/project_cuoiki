@@ -1,0 +1,67 @@
+#include "dma_qr.h"
+#include "xaxidma.h"
+#include "xqr_binarize.h"   // driver sinh boi Vitis HLS (theo ten IP qr_binarize)
+#include "xparameters.h"
+#include "xil_cache.h"
+#include "xil_printf.h"
+#include "xstatus.h"
+#include "xgpio.h"
+
+static XAxiDma      Dma;
+static XQr_binarize Accel;
+static XGpio        Led;
+
+int hw_init(void) {
+    // --- AXI DMA ---
+    XAxiDma_Config *dc = XAxiDma_LookupConfig(XPAR_AXIDMA_0_DEVICE_ID);
+    if (!dc || XAxiDma_CfgInitialize(&Dma, dc) != XST_SUCCESS) {
+        xil_printf("DMA init that bai\r\n");
+        return XST_FAILURE;
+    }
+    XAxiDma_IntrDisable(&Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DMA_TO_DEVICE);
+    XAxiDma_IntrDisable(&Dma, XAXIDMA_IRQ_ALL_MASK, XAXIDMA_DEVICE_TO_DMA);
+
+    // --- IP qr_binarize (HLS) ---
+    // Neu ten macro device id khac, tra trong xparameters.h / xqr_binarize.h
+    if (XQr_binarize_Initialize(&Accel, XPAR_QR_BINARIZE_0_DEVICE_ID) != XST_SUCCESS) {
+        xil_printf("Accel init that bai\r\n");
+        return XST_FAILURE;
+    }
+    XGpio_Initialize(&Led, XPAR_AXI_GPIO_0_DEVICE_ID);   // <-- THEM
+    XGpio_SetDataDirection(&Led, 1, 0x0);
+    return XST_SUCCESS;
+}
+
+int hw_binarize(u32 *rgb_in, u8 *bin_out, int npix, u8 threshold) {
+    // 1) Cau hinh va khoi dong IP HLS (ap_ctrl_hs: phai Start moi khung)
+    XQr_binarize_Set_threshold(&Accel, threshold);
+    XQr_binarize_Set_invert(&Accel, 0);
+    XQr_binarize_Set_size(&Accel, (u32)npix);
+    XQr_binarize_Start(&Accel);
+
+    // 2) Dong bo cache truoc khi DMA truy cap DDR
+    Xil_DCacheFlushRange((UINTPTR)rgb_in, npix * 4);
+    Xil_DCacheFlushRange((UINTPTR)bin_out, npix);
+
+    // 3) Khoi dong S2MM truoc (san sang nhan), roi MM2S (day pixel vao)
+    if (XAxiDma_SimpleTransfer(&Dma, (UINTPTR)bin_out, npix,
+                               XAXIDMA_DEVICE_TO_DMA) != XST_SUCCESS)
+        return XST_FAILURE;
+    if (XAxiDma_SimpleTransfer(&Dma, (UINTPTR)rgb_in, npix * 4,
+                               XAXIDMA_DMA_TO_DEVICE) != XST_SUCCESS)
+        return XST_FAILURE;
+
+    // 4) Cho ca hai kenh DMA hoan tat
+    while (XAxiDma_Busy(&Dma, XAXIDMA_DMA_TO_DEVICE) ||
+           XAxiDma_Busy(&Dma, XAXIDMA_DEVICE_TO_DMA)) { }
+
+    // Doc co ap_done de xoa, san sang cho khung sau
+    (void)XQr_binarize_IsDone(&Accel);
+
+    // 5) Invalidate cache de CPU thay du lieu DMA vua ghi
+    Xil_DCacheInvalidateRange((UINTPTR)bin_out, npix);
+    return XST_SUCCESS;
+}
+void hw_led(int on) {                                    // <-- THEM
+    XGpio_DiscreteWrite(&Led, 1, on ? 0x1 : 0x0);
+}

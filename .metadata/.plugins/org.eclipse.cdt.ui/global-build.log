@@ -1,0 +1,9 @@
+Nothing to build in platform 'qr_ck'
+
+22:41:09 **** Incremental Build of configuration Debug for project ck_qr ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+ 
+make --no-print-directory main-build
+make[1]: Nothing to be done for 'main-build'.

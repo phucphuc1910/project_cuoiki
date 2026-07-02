@@ -1,0 +1,310 @@
+21:31:30 DEBUG : Logs will be stored at '/home/phuc/HWSWCK/Z710/ck_qr/IDE.log'.
+21:31:31 INFO  : Launching XSCT server: xsct -n  -interactive /home/phuc/HWSWCK/Z710/ck_qr/temp_xsdb_launch_script.tcl
+21:31:31 INFO  : Registering command handlers for Vitis TCF services
+21:31:31 INFO  : Platform repository initialization has completed.
+21:31:33 INFO  : XSCT server has started successfully.
+21:31:33 INFO  : Successfully done setting XSCT server connection channel  
+21:31:33 INFO  : plnx-install-location is set to ''
+21:31:33 INFO  : Successfully done query RDI_DATADIR 
+21:31:33 INFO  : Successfully done setting workspace for the tool. 
+21:32:12 INFO  : Result from executing command 'getProjects': qr_ck
+21:32:12 INFO  : Result from executing command 'getPlatforms': xilinx_vck190_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+21:32:26 INFO  : Result from executing command 'getProjects': qr_ck
+21:32:26 INFO  : Result from executing command 'getPlatforms': qr_ck|/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/qr_ck.xpfm;xilinx_vck190_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+21:36:05 INFO  : Result from executing command 'getProjects': qr_ck
+21:36:05 INFO  : Result from executing command 'getPlatforms': qr_ck|/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/qr_ck.xpfm;xilinx_vck190_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+21:37:19 INFO  : No changes in MSS file content so sources will not be generated.
+21:39:50 INFO  : Result from executing command 'getProjects': qr_ck
+21:39:50 INFO  : Result from executing command 'getPlatforms': qr_ck|/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/qr_ck.xpfm;xilinx_vck190_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_202220_1/xilinx_vck190_base_202220_1.xpfm;xilinx_vck190_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vck190_base_dfx_202220_1/xilinx_vck190_base_dfx_202220_1.xpfm;xilinx_vmk180_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_vmk180_base_202220_1/xilinx_vmk180_base_202220_1.xpfm;xilinx_zcu102_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_202220_1/xilinx_zcu102_base_202220_1.xpfm;xilinx_zcu102_base_dfx_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu102_base_dfx_202220_1/xilinx_zcu102_base_dfx_202220_1.xpfm;xilinx_zcu104_base_202220_1|/home/phuc/tools/Xilinx/Vitis/2022.2/base_platforms/xilinx_zcu104_base_202220_1/xilinx_zcu104_base_202220_1.xpfm
+21:49:44 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+21:55:38 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:05:57 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:06:05 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:06:05 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:06:05 INFO  : 'jtag frequency' command is executed.
+22:06:05 INFO  : Context for 'APU' is selected.
+22:06:05 INFO  : System reset is completed.
+22:06:08 INFO  : 'after 3000' command is executed.
+22:06:08 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:06:09 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:06:09 INFO  : Context for 'APU' is selected.
+22:06:10 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:06:10 INFO  : 'configparams force-mem-access 1' command is executed.
+22:06:10 INFO  : Context for 'APU' is selected.
+22:06:10 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:06:10 INFO  : 'ps7_init' command is executed.
+22:06:10 INFO  : 'ps7_post_config' command is executed.
+22:06:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:10 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:06:10 INFO  : 'configparams force-mem-access 0' command is executed.
+22:06:10 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:06:10 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:06:10 INFO  : 'con' command is executed.
+22:06:10 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:06:10 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+22:14:09 INFO  : Disconnected from the channel tcfchan#4.
+22:14:10 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:14:10 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:14:10 INFO  : 'jtag frequency' command is executed.
+22:14:10 INFO  : Context for 'APU' is selected.
+22:14:10 INFO  : System reset is completed.
+22:14:13 INFO  : 'after 3000' command is executed.
+22:14:14 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:14:15 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:14:15 INFO  : Context for 'APU' is selected.
+22:14:15 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:14:15 INFO  : 'configparams force-mem-access 1' command is executed.
+22:14:15 INFO  : Context for 'APU' is selected.
+22:14:15 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:14:15 INFO  : 'ps7_init' command is executed.
+22:14:15 INFO  : 'ps7_post_config' command is executed.
+22:14:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:14:15 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:14:15 INFO  : 'configparams force-mem-access 0' command is executed.
+22:14:15 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:14:15 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:14:15 INFO  : 'con' command is executed.
+22:14:15 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:14:15 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+22:15:16 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:15:30 INFO  : Disconnected from the channel tcfchan#5.
+22:15:31 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:15:31 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:15:31 INFO  : 'jtag frequency' command is executed.
+22:15:31 INFO  : Context for 'APU' is selected.
+22:15:32 INFO  : System reset is completed.
+22:15:35 INFO  : 'after 3000' command is executed.
+22:15:35 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:15:36 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:15:36 INFO  : Context for 'APU' is selected.
+22:15:36 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:15:36 INFO  : 'configparams force-mem-access 1' command is executed.
+22:15:36 INFO  : Context for 'APU' is selected.
+22:15:36 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:15:36 INFO  : 'ps7_init' command is executed.
+22:15:36 INFO  : 'ps7_post_config' command is executed.
+22:15:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:15:36 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:15:36 INFO  : 'configparams force-mem-access 0' command is executed.
+22:15:36 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:15:36 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:15:36 INFO  : 'con' command is executed.
+22:15:36 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:15:36 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+22:16:58 INFO  : Disconnected from the channel tcfchan#6.
+22:16:59 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:16:59 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:16:59 INFO  : 'jtag frequency' command is executed.
+22:16:59 INFO  : Context for 'APU' is selected.
+22:16:59 INFO  : System reset is completed.
+22:17:02 INFO  : 'after 3000' command is executed.
+22:17:02 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:17:03 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:17:03 INFO  : Context for 'APU' is selected.
+22:17:03 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:17:03 INFO  : 'configparams force-mem-access 1' command is executed.
+22:17:03 INFO  : Context for 'APU' is selected.
+22:17:03 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:17:03 INFO  : 'ps7_init' command is executed.
+22:17:03 INFO  : 'ps7_post_config' command is executed.
+22:17:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:17:04 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:17:04 INFO  : 'configparams force-mem-access 0' command is executed.
+22:17:04 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:17:04 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:17:04 INFO  : 'con' command is executed.
+22:17:04 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:17:04 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+22:39:06 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:39:19 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:41:09 INFO  : Checking for BSP changes to sync application flags for project 'ck_qr'...
+22:41:14 INFO  : Disconnected from the channel tcfchan#7.
+22:41:15 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:41:15 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:41:15 INFO  : 'jtag frequency' command is executed.
+22:41:15 INFO  : Context for 'APU' is selected.
+22:41:15 INFO  : System reset is completed.
+22:41:18 INFO  : 'after 3000' command is executed.
+22:41:18 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:41:20 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:41:20 INFO  : Context for 'APU' is selected.
+22:41:20 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:41:20 INFO  : 'configparams force-mem-access 1' command is executed.
+22:41:20 INFO  : Context for 'APU' is selected.
+22:41:20 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:41:20 INFO  : 'ps7_init' command is executed.
+22:41:20 INFO  : 'ps7_post_config' command is executed.
+22:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:20 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:41:20 INFO  : 'configparams force-mem-access 0' command is executed.
+22:41:20 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:41:20 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:41:20 INFO  : 'con' command is executed.
+22:41:20 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:41:20 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+22:58:52 INFO  : Disconnected from the channel tcfchan#8.
+22:58:53 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+22:58:53 INFO  : Jtag cable 'Digilent Zybo 210279A4278DA' is selected.
+22:58:53 INFO  : 'jtag frequency' command is executed.
+22:58:53 INFO  : Context for 'APU' is selected.
+22:58:53 INFO  : System reset is completed.
+22:58:56 INFO  : 'after 3000' command is executed.
+22:58:56 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}' command is executed.
+22:58:58 INFO  : Device configured successfully with "/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit"
+22:58:58 INFO  : Context for 'APU' is selected.
+22:58:58 INFO  : Hardware design and registers information is loaded from '/home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa'.
+22:58:58 INFO  : 'configparams force-mem-access 1' command is executed.
+22:58:58 INFO  : Context for 'APU' is selected.
+22:58:58 INFO  : Sourcing of '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl' is done.
+22:58:58 INFO  : 'ps7_init' command is executed.
+22:58:58 INFO  : 'ps7_post_config' command is executed.
+22:58:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:58 INFO  : The application '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf' is downloaded to processor 'ps7_cortexa9_0'.
+22:58:58 INFO  : 'configparams force-mem-access 0' command is executed.
+22:58:58 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Digilent Zybo 210279A4278DA" && level==0 && jtag_device_ctx=="jsn-Zybo-210279A4278DA-13722093-0"}
+fpga -file /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw /home/phuc/HWSWCK/Z710/ck_qr/qr_ck/export/qr_ck/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow /home/phuc/HWSWCK/Z710/ck_qr/ck_qr/Debug/ck_qr.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+22:58:58 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+22:58:58 INFO  : 'con' command is executed.
+22:58:58 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+22:58:58 INFO  : Launch script is exported to file '/home/phuc/HWSWCK/Z710/ck_qr/ck_qr_system/_ide/scripts/debugger_ck_qr-default.tcl'
+01:35:07 INFO  : Disconnected from the channel tcfchan#9.
+16:14:35 DEBUG : Logs will be stored at '/home/phuc/HWSWCK/Z710/ck_qr/IDE.log'.
+16:14:36 INFO  : Launching XSCT server: xsct -n  -interactive /home/phuc/HWSWCK/Z710/ck_qr/temp_xsdb_launch_script.tcl
+16:14:39 INFO  : Registering command handlers for Vitis TCF services
+16:14:39 INFO  : Platform repository initialization has completed.
+16:14:39 INFO  : XSCT server has started successfully.
+16:14:39 INFO  : plnx-install-location is set to ''
+16:14:39 INFO  : Successfully done setting XSCT server connection channel  
+16:14:39 INFO  : Successfully done query RDI_DATADIR 
+16:14:39 INFO  : Successfully done setting workspace for the tool. 

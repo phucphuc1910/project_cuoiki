@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include "xparameters.h"
+#include "xstatus.h"
+#include "xil_printf.h"
+#include "netif/xadapter.h"
+#include "lwip/init.h"
+#include "lwip/inet.h"
+
+#include "qr_config.h"
+#include "dma_qr.h"
+#include "qr_server.h"
+
+// Cac ham nay den tu platform.c cua template "lwIP Echo Server"
+void init_platform(void);
+void platform_enable_interrupts(void);
+
+static struct netif server_netif;
+
+int main(void) {
+    init_platform();              // setup timer + interrupt controller (template)
+
+    if (hw_init() != XST_SUCCESS) {
+        xil_printf("Khoi tao phan cung that bai\r\n");
+        return -1;
+    }
+
+    // MAC tu gan (ZedBoard khong co MAC trong eFUSE) va IP tinh
+    unsigned char mac[6] = {0x00, 0x0a, 0x35, 0x00, 0x01, 0x02};
+    ip_addr_t ip, mask, gw;
+    IP4_ADDR(&ip,   BOARD_IP_0, BOARD_IP_1, BOARD_IP_2, BOARD_IP_3);
+    IP4_ADDR(&mask, 255, 255, 255, 0);
+    IP4_ADDR(&gw,   BOARD_IP_0, BOARD_IP_1, BOARD_IP_2, 1);
+
+    lwip_init();
+
+    // Neu macro base address khac, tra trong xparameters.h (vd XPAR_XEMACPS_0_BASEADDR)
+    if (!xemac_add(&server_netif, &ip, &mask, &gw, mac,
+                   XPAR_XEMACPS_0_BASEADDR)) {
+        xil_printf("Loi them giao dien mang\r\n");
+        return -1;
+    }
+    netif_set_default(&server_netif);
+
+    platform_enable_interrupts();
+    netif_set_up(&server_netif);
+
+    start_qr_server();
+    xil_printf("QR server dang lang nghe tai %d.%d.%d.%d:%d\r\n",
+               BOARD_IP_0, BOARD_IP_1, BOARD_IP_2, BOARD_IP_3, QR_TCP_PORT);
+
+    // Vong lap chinh: bom goi nhan duoc vao lwIP (callback lo phan con lai)
+    while (1) {
+        xemacif_input(&server_netif);
+    }
+
+    return 0;
+}

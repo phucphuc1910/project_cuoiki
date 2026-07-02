@@ -1,0 +1,167 @@
+
+
+================================================================
+== Vitis HLS Report for 'qr_binarize'
+================================================================
+* Date:           Wed Jun 17 23:21:52 2026
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        qr_binarize_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z010-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.613 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-------+-------+---------+
+    |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+    |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+    +---------+---------+----------+----------+-------+-------+---------+
+    |    90008|    90008|  0.900 ms|  0.900 ms|  90009|  90009|       no|
+    +---------+---------+----------+----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |                                                |                                      |  Latency (cycles) |  Latency (absolute) |    Interval   | Pipeline|
+        |                    Instance                    |                Module                |   min   |   max   |    min   |    max   |  min  |  max  |   Type  |
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+        |grp_qr_binarize_Pipeline_VITIS_LOOP_21_1_fu_92  |qr_binarize_Pipeline_VITIS_LOOP_21_1  |    90005|    90005|  0.900 ms|  0.900 ms|  90005|  90005|       no|
+        +------------------------------------------------+--------------------------------------+---------+---------+----------+----------+-------+-------+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+----+-------+-------+-----+
+|       Name      | BRAM_18K| DSP|   FF  |  LUT  | URAM|
++-----------------+---------+----+-------+-------+-----+
+|DSP              |        -|   -|      -|      -|    -|
+|Expression       |        -|   -|      0|     42|    -|
+|FIFO             |        -|   -|      -|      -|    -|
+|Instance         |        0|   2|    225|    357|    -|
+|Memory           |        -|   -|      -|      -|    -|
+|Multiplexer      |        -|   -|      -|     34|    -|
+|Register         |        -|   -|     79|      -|    -|
++-----------------+---------+----+-------+-------+-----+
+|Total            |        0|   2|    304|    433|    0|
++-----------------+---------+----+-------+-------+-----+
+|Available        |      120|  80|  35200|  17600|    0|
++-----------------+---------+----+-------+-------+-----+
+|Utilization (%)  |        0|   2|     ~0|      2|    0|
++-----------------+---------+----+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
+    |                    Instance                    |                Module                | BRAM_18K| DSP|  FF | LUT | URAM|
+    +------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
+    |CTRL_s_axi_U                                    |CTRL_s_axi                            |        0|   0|   95|  122|    0|
+    |grp_qr_binarize_Pipeline_VITIS_LOOP_21_1_fu_92  |qr_binarize_Pipeline_VITIS_LOOP_21_1  |        0|   2|  130|  235|    0|
+    +------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
+    |Total                                           |                                      |        0|   2|  225|  357|    0|
+    +------------------------------------------------+--------------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                       Variable Name                       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------------------------------------------+----------+----+---+----+------------+------------+
+    |sub_i_i_fu_119_p2                                          |         +|   0|  0|  40|          33|           2|
+    |grp_qr_binarize_Pipeline_VITIS_LOOP_21_1_fu_92_dst_TREADY  |       and|   0|  0|   2|           1|           1|
+    +-----------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                      |          |   0|  0|  42|          34|           3|
+    +-----------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                |  25|          5|    1|          5|
+    |src_TREADY_int_regslice  |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  34|          7|    2|          7|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |                             Name                            | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                    |   4|   0|    4|          0|
+    |grp_qr_binarize_Pipeline_VITIS_LOOP_21_1_fu_92_ap_start_reg  |   1|   0|    1|          0|
+    |invert_read_reg_132                                          |   1|   0|    1|          0|
+    |size_read_reg_126                                            |  32|   0|   32|          0|
+    |sub_i_i_reg_142                                              |  33|   0|   33|          0|
+    |threshold_read_reg_137                                       |   8|   0|    8|          0|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                        |  79|   0|   79|          0|
+    +-------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+--------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++--------------------+-----+-----+------------+--------------+--------------+
+|s_axi_CTRL_AWVALID  |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_AWREADY  |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_AWADDR   |   in|    6|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WVALID   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WREADY   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WDATA    |   in|   32|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_WSTRB    |   in|    4|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARVALID  |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARREADY  |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_ARADDR   |   in|    6|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RVALID   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RREADY   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RDATA    |  out|   32|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_RRESP    |  out|    2|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BVALID   |  out|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BREADY   |   in|    1|       s_axi|          CTRL|        scalar|
+|s_axi_CTRL_BRESP    |  out|    2|       s_axi|          CTRL|        scalar|
+|ap_clk              |   in|    1|  ap_ctrl_hs|   qr_binarize|  return value|
+|ap_rst_n            |   in|    1|  ap_ctrl_hs|   qr_binarize|  return value|
+|interrupt           |  out|    1|  ap_ctrl_hs|   qr_binarize|  return value|
+|src_TDATA           |   in|   32|        axis|  src_V_data_V|       pointer|
+|src_TVALID          |   in|    1|        axis|  src_V_last_V|       pointer|
+|src_TREADY          |  out|    1|        axis|  src_V_last_V|       pointer|
+|src_TLAST           |   in|    1|        axis|  src_V_last_V|       pointer|
+|src_TKEEP           |   in|    4|        axis|  src_V_keep_V|       pointer|
+|src_TSTRB           |   in|    4|        axis|  src_V_strb_V|       pointer|
+|dst_TDATA           |  out|    8|        axis|  dst_V_data_V|       pointer|
+|dst_TVALID          |  out|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TREADY          |   in|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TLAST           |  out|    1|        axis|  dst_V_last_V|       pointer|
+|dst_TKEEP           |  out|    1|        axis|  dst_V_keep_V|       pointer|
+|dst_TSTRB           |  out|    1|        axis|  dst_V_strb_V|       pointer|
++--------------------+-----+-----+------------+--------------+--------------+
+

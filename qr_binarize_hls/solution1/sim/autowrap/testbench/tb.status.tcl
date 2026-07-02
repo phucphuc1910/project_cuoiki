@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/phuc/HWSWCK/qr_binarize_hls/solution1/./sim/autowrap/testbench/qr_binarize.cpp_pre.cpp.tb.cpp

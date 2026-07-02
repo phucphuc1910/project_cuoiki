@@ -1,0 +1,94 @@
+#include "qr_server.h"
+#include <string.h>
+#include "lwip/tcp.h"
+#include "xil_types.h"
+
+#include "qr_config.h"
+#include "dma_qr.h"
+#include "qr_sw.h"
+
+// Buffers trong DDR (du cho dinh dang RGB888)
+static u8  rx_buf[HDR_LEN + NPIX * 3];
+static u32 frame_rgb[NPIX] __attribute__((aligned(64)));
+static u8  frame_bin[NPIX] __attribute__((aligned(64)));
+
+static u32 rx_count = 0;   // so byte da nhan cua khung hien tai
+static u32 need     = 0;   // tong byte can cho khung hien tai (0 = chua biet)
+
+static void process_and_reply(struct tcp_pcb *tpcb) {
+    u8  fmt = rx_buf[2];
+    u8  thr = rx_buf[3];
+    u8 *d   = rx_buf + HDR_LEN;
+
+    if (fmt == FMT_GRAY) {
+        for (int i = 0; i < NPIX; i++) {
+            u32 g = d[i];
+            frame_rgb[i] = g | (g << 8) | (g << 16);   // R=G=B -> IP giu nguyen
+        }
+    } else { // FMT_RGB (R,G,B)
+        for (int i = 0; i < NPIX; i++) {
+            u32 r = d[3*i], g = d[3*i+1], b = d[3*i+2];
+            frame_rgb[i] = r | (g << 8) | (b << 16);
+        }
+    }
+
+    hw_binarize(frame_rgb, frame_bin, NPIX, thr);   // PL nhi phan hoa
+
+    char out[256];
+    int n = decode_qr(frame_bin, IMG_W, IMG_H, out, sizeof(out));
+    hw_led(n > 0);
+    if (n <= 0) { strcpy(out, "NO_QR"); n = 5; }
+    out[n++] = '\n';
+
+    tcp_write(tpcb, out, n, TCP_WRITE_FLAG_COPY);
+    tcp_output(tpcb);
+}
+
+static err_t on_recv(void *arg, struct tcp_pcb *tpcb, struct pbuf *p, err_t err) {
+    (void)arg; (void)err;
+    if (!p) {                       // client dong ket noi
+        tcp_close(tpcb);
+        return ERR_OK;
+    }
+
+    // Gom du lieu vao rx_buf
+    for (struct pbuf *q = p; q; q = q->next) {
+        u32 n = q->len;
+        if (rx_count + n > sizeof(rx_buf)) n = sizeof(rx_buf) - rx_count;
+        memcpy(rx_buf + rx_count, q->payload, n);
+        rx_count += n;
+    }
+    tcp_recved(tpcb, p->tot_len);   // mo cua so nhan
+    pbuf_free(p);
+
+    // Da du header de biet kich thuoc khung chua?
+    if (need == 0 && rx_count >= HDR_LEN) {
+        if (rx_buf[0] == MAGIC0 && rx_buf[1] == MAGIC1)
+            need = HDR_LEN + (rx_buf[2] == FMT_RGB ? NPIX * 3 : NPIX);
+        else
+            rx_count = 0;           // lech khung -> reset dong bo
+    }
+
+    // Du mot khung day du?
+    if (need && rx_count >= need) {
+        process_and_reply(tpcb);
+        rx_count = 0;
+        need = 0;
+    }
+    return ERR_OK;
+}
+
+static err_t on_accept(void *arg, struct tcp_pcb *newpcb, err_t err) {
+    (void)arg; (void)err;
+    tcp_recv(newpcb, on_recv);
+    rx_count = 0;
+    need = 0;
+    return ERR_OK;
+}
+
+void start_qr_server(void) {
+    struct tcp_pcb *pcb = tcp_new();
+    tcp_bind(pcb, IP_ADDR_ANY, QR_TCP_PORT);
+    pcb = tcp_listen(pcb);
+    tcp_accept(pcb, on_accept);
+}

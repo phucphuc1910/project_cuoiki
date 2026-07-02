@@ -1,0 +1,7 @@
+Running: xsim.dir/qr_binarize/xsimk -simmode gui -wdb qr_binarize.wdb -simrunnum 0 -socket 45341
+Design successfully loaded
+Design Loading Memory Usage: 22680 KB (Peak: 22700 KB)
+Design Loading CPU Usage: 0 ms
+Simulation completed
+Simulation Memory Usage: 109484 KB (Peak: 161948 KB)
+Simulation CPU Usage: 0 ms

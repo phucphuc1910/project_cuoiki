@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Fri Jun 19 21:27:58 2026
+# Process ID: 43998
+# Current directory: /home/phuc/HWSWCK/Z710/ck_qr/ck_qr.runs/synth_1
+# Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
+# Log file: /home/phuc/HWSWCK/Z710/ck_qr/ck_qr.runs/synth_1/design_1_wrapper.vds
+# Journal file: /home/phuc/HWSWCK/Z710/ck_qr/ck_qr.runs/synth_1/vivado.jou
+# Running On: phuc-Precision-5560, OS: Linux, CPU Frequency: 800.934 MHz, CPU Physical cores: 8, Host memory: 33361 MB
+#-----------------------------------------------------------
+source design_1_wrapper.tcl -notrace

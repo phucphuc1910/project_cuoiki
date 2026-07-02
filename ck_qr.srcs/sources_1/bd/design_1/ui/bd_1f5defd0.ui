@@ -1,0 +1,41 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"0.89506",
+   "Default View_TopLeft":"1480,-130",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.0r4  2019-12-20 bk=1.5203 VDI=41 GEI=36 GUI=JA:10.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 7 -x 2270 -y 320 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 7 -x 2270 -y 340 -defaultsOSRD
+preplace portBus led -pg 1 -lvl 7 -x 2270 -y -40 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 6 -x 2010 -y 410 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 4 -x 1250 -y 120 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -x 560 -y 390 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 210 -y 140 -defaultsOSRD
+preplace inst axi_mem_intercon -pg 1 -lvl 5 -x 1630 -y 390 -defaultsOSRD
+preplace inst qr_binarize_0 -pg 1 -lvl 3 -x 900 -y 430 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 5 -x 1630 -y -50 -defaultsOSRD
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 7 20 240 390 550 730 150 1060 0 1450 540 1780 560 2250
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 7 30 570 NJ 570 NJ 570 NJ 570 NJ 570 NJ 570 2240
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 4 400 180 740 170 1050 -10 1470
+preplace netloc axi_gpio_0_gpio_io_o 1 5 2 NJ -40 NJ
+preplace netloc processing_system7_0_DDR 1 6 1 NJ 320
+preplace netloc processing_system7_0_FIXED_IO 1 6 1 NJ 340
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 6 410 230 NJ 230 1060J 240 NJ 240 NJ 240 2250
+preplace netloc ps7_0_axi_periph_M00_AXI 1 2 2 720 70 NJ
+preplace netloc axi_dma_0_M_AXI_MM2S 1 4 1 1460 60n
+preplace netloc axi_mem_intercon_M00_AXI 1 5 1 N 390
+preplace netloc axi_dma_0_M_AXI_S2MM 1 4 1 1440 80n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 2 3 750 250 NJ 250 1430
+preplace netloc qr_binarize_0_dst 1 3 1 1070 90n
+preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 720 390n
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 710 -70 NJ -70 NJ
+levelinfo -pg 1 0 210 560 900 1250 1630 2010 2270
+pagesize -pg 1 -db -bbox -sgen 0 -130 2390 580
+"
+}
+{
+   "da_axi4_cnt":"5",
+   "da_board_cnt":"1",
+   "da_ps7_cnt":"1"
+}
